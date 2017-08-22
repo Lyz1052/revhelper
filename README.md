@@ -2,14 +2,6 @@
  用途：自动更新项目中资源文件的引用
  目前只支持替换项目中的绝对路径引用
  
- [依赖](https://github.com/Lyz1052/revhelper#依赖)
- 
- [初始化](https://github.com/Lyz1052/revhelper#初始化)
- 
- [使用流程](https://github.com/Lyz1052/revhelper#使用流程)
- 
- [API](https://github.com/Lyz1052/revhelper#API)
- 
 # 依赖
  - [Nodejs](http://nodejs.cn/download/)
  - [grunt-cli](https://gruntjs.com/getting-started)
@@ -18,12 +10,21 @@
  - [grunt-filerev](https://github.com/yeoman/grunt-filerev)
  
 # 初始化
+
+
 ### 安装 [nodejs](http://nodejs.cn/download/)
 安装完成后可以使用`npm config set registry http://registry.npm.taobao.org/`命令使用国内镜像下载npm包，加快速度
 
 ### 安装 [grunt-cli](https://gruntjs.com/getting-started)
 ```
 npm install -g grunt-cli
+```
+
+> 以下操作均在资源库目录下进行
+
+### 克隆 Revhelper
+```
+git clone https://github.com/Lyz1052/revhelper
 ```
 
 ### 安装 grunt 插件
@@ -34,10 +35,6 @@ npm install grunt-usemin --save-dev
 npm install grunt-contrib-copy --save-dev
 ```
 
-### 克隆 Revhelper
-```
-git clone https://github.com/Lyz1052/revhelper
-```
 ### 替换库文件
 
 使用 node_modules_modified 替换 node_modules 中的库文件
@@ -129,17 +126,29 @@ git clone https://github.com/Lyz1052/revhelper
 # 使用流程：
 
 - 等待版本更新的节点
+
 	更新资源库，将当前版本（1.0）提交
+	
 	grunt init
+	
 - 等待下一次版本更新（2.0）
+
 	更新资源库
+	
 	grunt refresh
+	
 	提交 2.0 版本
+	
 	grunt postcommit
+	
 - 等待下一次版本更新（3.0）
+
 	更新资源库
+	
 	grunt refresh
+	
 	提交 3.0 版本
+	
 	...
 	
 # API
