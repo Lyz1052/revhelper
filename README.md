@@ -11,6 +11,11 @@
  
 # 初始化
 
+
+
+###### 1. 全局安装
+
+
 ### 安装 [nodejs](http://nodejs.cn/download/)
 安装完成后可以使用`npm config set registry http://registry.npm.taobao.org/`命令使用国内镜像下载npm包，加快速度
 
@@ -20,8 +25,9 @@ npm install -g grunt-cli
 ```
 
 ---
-> 以下操作需要切换到项目目录下（资源目录的上一级目录）
----
+
+###### 2. 项目目录（资源目录的上一级目录）中安装
+
 
 ### 克隆 Revhelper
 ```
