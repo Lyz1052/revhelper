@@ -101,7 +101,8 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         hashlen:8,
         
         /**
-        * usemin:工具的引用替换后过滤器
+        * usemin工具的引用替换后过滤器
+        *
         * file:根据指定正则（options.patterns）寻找到的引用
         *       当正则是 /<script.+src=['"]([^"']+)["']/gm 时，
         *       如果页面中找到了 <script src="${basePath}/js/index.js?v=1">，
@@ -113,7 +114,8 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         },
         
         /**
-        * usemin:工具的引用替换后过滤器
+        * usemin工具的引用替换后过滤器
+        *
         * file:当前资源文件的地址
         * fileObj:file的相关对象
         * match:正则的匹配（全部匹配）
