@@ -39,7 +39,7 @@ npm init
 ```
 
 ### 安装 grunt 插件
-在项目目录中，依次执行下面的命令行命令
+在项目目录中，依次执行下面的命令
 ```
 npm install grunt --save-dev
 npm install grunt-filerev --save-dev
@@ -65,7 +65,7 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
 +-- Gruntfile.js（Grunt相关配置）
 ```
 
-# 配置
+# 配置（Gruntfile.js）
 
 ### revhelper配置
 ```
