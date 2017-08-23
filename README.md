@@ -5,6 +5,7 @@
 # 依赖
  - [Nodejs](http://nodejs.cn/download/)
  - [grunt-cli](https://gruntjs.com/getting-started)
+ - [grunt](https://gruntjs.com/getting-started)
  - [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy/)
  - [grunt-usemin](https://github.com/yeoman/grunt-usemin)
  - [grunt-filerev](https://github.com/yeoman/grunt-filerev)
