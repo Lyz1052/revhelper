@@ -101,7 +101,7 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         hashlen:8,
         
         /**
-        * usemin工具的引用替换后过滤器
+        * usemin工具的引用替换前过滤器
         *
         * file:根据指定正则（options.patterns）寻找到的引用
         *       当正则是 /<script.+src=['"]([^"']+)["']/gm 时，
@@ -137,7 +137,10 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
          ...
          patterns:{
              html: [
-                     //pattern，匹配页面内容的正则，Replaceing script 是替换之后的控制台输出log信息
+                     //第一个参数：匹配页面内容的正则
+                     //第二个参数：替换之后的控制台输出log信息
+                     //第三个参数：匹配前过滤器
+                     //第四个参数：匹配后过滤器
                      [ /<script.+src=['"]([^"']+)["']/gm, 'Replaceing script',cfg.filterIn,cfg.filterOut],
                      [ /<link[^\>]+href=['"]([^"']+)["']/gm, 'Replaceing script',cfg.filterIn,cfg.filterOut],
                  ]
