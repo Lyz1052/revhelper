@@ -136,7 +136,7 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.src%>/',
                     dest: '<%= yeoman.latest %>/',
                     src: [
-                        '**/*.{<%= yeoman.ext.page %>}',
+                        '**/*.{<%= yeoman.ext.res %>}',
                         // '**/*.css',
                     ]
                 }]

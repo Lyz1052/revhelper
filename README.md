@@ -17,7 +17,11 @@
 
 
 ### 安装 [nodejs](http://nodejs.cn/download/)
-安装完成后可以使用`npm config set registry http://registry.npm.taobao.org/`命令使用国内镜像下载npm包，加快速度
+安装完成后可以使用以下命令使用国内镜像下载npm包，加快速度
+```
+npm config set registry http://registry.npm.taobao.org/
+```
+
 
 ### 安装 [grunt-cli](https://gruntjs.com/getting-started)
 ```
@@ -28,29 +32,38 @@ npm install -g grunt-cli
 
 ###### 2. 项目目录（资源目录的上一级目录）中安装
 
-
-### 克隆 Revhelper
+### 初始化npm
+执行下面的命令，然后按提示输入项目信息，一路回车最后输入yes就可以了
 ```
-git clone https://github.com/Lyz1052/revhelper
+npm init
 ```
 
 ### 安装 grunt 插件
-在项目目录中，执行下面的命令行命令
+在项目目录中，依次执行下面的命令行命令
 ```
+npm install grunt --save-dev
 npm install grunt-filerev --save-dev
 npm install grunt-usemin --save-dev
 npm install grunt-contrib-copy --save-dev
 ```
+### 下载 Revhelper，替换库文件
+下载链接如下，下载完成后，使用 node_modules_modified 中的文件替换项目目录下的 node_modules 中的库文件，然后copy Gruntfile.js到项目目录下
+```
+https://github.com/Lyz1052/revhelper/archive/master.zip
+```
 
-### 替换库文件
+### 初始化完成后，目录结构应如下所示
 
-使用 node_modules_modified 替换 node_modules 中的库文件
-
-
-### 拉取资源库（SVN）中Web资源目录的代码
-
-
-
+```
++-- node_modules（库文件夹，包含相关模块）
+| +-- ...
+| +-- ...
++-- WebRoot（web资源文件夹目录，包含页面和css，js等资源）
+| +-- ...
+| +-- ...
++-- package.json
++-- Gruntfile.js（Grunt相关配置）
+```
 
 # 配置
 
