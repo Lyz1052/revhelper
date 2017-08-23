@@ -122,8 +122,8 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         * src:原始匹配
         **/
         filterOut:function(file,fileObj,match,src){
-        ...
-			//return：替换后的匹配
+            ...
+            //return：替换后的匹配
             return newname;
         }
     }
