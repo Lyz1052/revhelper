@@ -109,6 +109,7 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         *       那么file就是 ${basePath}/js/index.js?v=1
         **/
         filterIn:function(file){
+            ...
             //return: 可识别的相对路径，上述情况时，返回值应该是 /js/index.js
             return file;
         },

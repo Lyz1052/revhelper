@@ -35,28 +35,37 @@ module.exports = function (grunt) {
         },
         //css和js引用中包含这些时，不替换引用
         ignorePrefix:['http:','https:','${im_url}'],
-        //css和js引用的前缀
-        prefix:'${basePath}',
-        //
+        //css和js引用的前缀，不能重复（开头不重复）
+        prefix:['${basePath}'],
+        //web资源目录路径
         src:'WebRoot',
         pub:'publishing',
         latest:'latest',
         tmp:'tmp',
         hashlen:8,
         filterIn:function(file){
+            var prefix = "";
             //忽略不在项目中的资源
-            if(cfg.ignorePrefix.some(function(prefix){
-                    return file.indexOf(prefix)!=-1;
+            if(cfg.ignorePrefix.some(function(p){
+                    return file.indexOf(p)!=-1;
                 }))
-                return file;
+                return {srcFile:file,prefix:prefix}
 
-            file = file.replace(cfg.prefix,"");
+            cfg.prefix.forEach(function(p){
+                if(file.indexOf(p)>-1){
+                    prefix = p;
+                }
+            })
+
+            file = file.replace(prefix,"");
+
             if(file.indexOf('?')>-1){
                 file = file.substr(0,file.indexOf('?'));
             }
-            return file.replace(cfg.prefix,"");
+
+            return {srcFile:file,prefix:prefix}
         },
-        filterOut:function(file,fileObj,match,src){
+        filterOut:function(file,fileObj,match,src,srcFileObject){
             //忽略不在项目中的资源
             if(cfg.ignorePrefix.some(function(prefix){
                     return file.indexOf(prefix)!=-1;
@@ -84,7 +93,7 @@ module.exports = function (grunt) {
                 return src;
             }
 
-            newname = cfg.prefix+newname;
+            newname = srcFileObject.prefix+newname;
             var replaced = match.replace(src, newname);
             if(newname!=src){
                 grunt.revhelper = grunt.revhelper || {};
