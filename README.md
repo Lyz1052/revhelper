@@ -82,8 +82,8 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         //忽略的引用：css和js引用中包含这些时，不替换引用
         ignorePrefix:['http:','https:','${im_url}'],
         
-        //引用中绝对路径的前缀
-        prefix:'${basePath}',
+        //引用中绝对路径的前缀，不同的前缀不得重复（开头重复，例如 ${basePath}和${basePath}{nextPath}属于重复）
+        prefix:['${basePath}','${anotherBasePath}'],
         
         //当前版本的资源目录，包含所有资源文件和引用所在的页面文件，可用SVN进行版本控制
         src:'WebRoot',
@@ -110,8 +110,10 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         **/
         filterIn:function(file){
             ...
-            //return: 可识别的相对路径，上述情况时，返回值应该是 /js/index.js
-            return file;
+            //return: 
+            //file: 可识别的相对路径，上述情况时，返回值应该是 /js/index.js
+            //prefix: 引用中出现的前缀，默认为空
+            return {srcFile:file,prefix:prefix};
         },
         
         /**
@@ -121,8 +123,9 @@ https://github.com/Lyz1052/revhelper/archive/master.zip
         * fileObj:file的相关对象
         * match:正则的匹配（全部匹配）
         * src:原始匹配
+        * srcFileObject: filterIn返回的对象
         **/
-        filterOut:function(file,fileObj,match,src){
+        filterOut:function(file,fileObj,match,src,srcFileObject){
             ...
             //return：替换后的匹配
             return newname;
